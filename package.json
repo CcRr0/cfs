@@ -1,0 +1,22 @@
+{
+    "name": "cfs",
+    "version": "0.0.0",
+    "scripts": {
+        "watch:ts": "node esbuild.js",
+        "watch:sass": "sass --watch src:live",
+        "watch:static": "rsync -a ./app/ ./live && node static.js",
+        "dev": "npm run watch:ts & npm run watch:sass & npm run watch:static",
+        "build:ts": "esbuild $(find ./src -name 'main.ts') --outbase=./src --outdir=./dist --platform=browser --bundle --minify",
+        "build:sass": "sass --no-source-map src:dist",
+        "build:static": "rsync -a ./app/ ./dist",
+        "build": "npm run build:ts && npm run build:sass && npm run build:static",
+        "export": "rm -rf ./dist/* && npm run build && cd dist && zip -0 -r ../build/${npm_package_name}-${npm_package_version}.zip ."
+    },
+    "devDependencies": {
+        "chrome-types": "^0.1.325",
+        "esbuild": "^0.24.0",
+        "glob": "^11.0.0",
+        "sass": "^1.83.0",
+        "typescript": "^5.7.2"
+    }
+}

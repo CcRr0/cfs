@@ -1,0 +1,37 @@
+{
+    "$schema": "https://json.schemastore.org/chrome-manifest.json",
+    "manifest_version": 3,
+    "name": "cfs",
+    "version": "0.0.0",
+    "action": {
+        "default_icon": {
+            "16": "/assets/icon-16.png",
+            "24": "/assets/icon-24.png",
+            "32": "/assets/icon-32.png"
+        }
+    },
+    "icons": {
+        "16": "/assets/icon-16.png",
+        "48": "/assets/icon-48.png",
+        "128": "/assets/icon-128.png",
+        "256": "/assets/icon-256.png"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://codeforces.com/contest/*/problem/*"
+            ],
+            "js": [
+                "/content_scripts/problem/main.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://codeforces.com/contest/*/submit?*"
+            ],
+            "js": [
+                "/content_scripts/submit/main.js"
+            ]
+        }
+    ]
+}

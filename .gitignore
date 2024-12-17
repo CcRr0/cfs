@@ -1,0 +1,5 @@
+.idea/
+node_modules/
+live/
+dist/
+build/
