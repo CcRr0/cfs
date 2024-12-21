@@ -1,4 +1,4 @@
-const id = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
+const id: string = location.pathname.substring(location.pathname.lastIndexOf("/") + 1);
 
 if (document.readyState !== "loading") {
     void main();

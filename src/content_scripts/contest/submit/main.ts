@@ -1,4 +1,4 @@
-const id = (new URLSearchParams(location.search)).get("id");
+const id: string | null = (new URLSearchParams(location.search)).get("id");
 
 if (id) {
     if (document.readyState !== "loading") {

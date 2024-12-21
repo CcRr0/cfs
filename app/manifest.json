@@ -22,7 +22,7 @@
                 "https://codeforces.com/contest/*/problem/*"
             ],
             "js": [
-                "/content_scripts/problem/main.js"
+                "/content_scripts/contest/problem/main.js"
             ]
         },
         {
@@ -30,7 +30,15 @@
                 "https://codeforces.com/contest/*/submit?*"
             ],
             "js": [
-                "/content_scripts/submit/main.js"
+                "/content_scripts/contest/submit/main.js"
+            ]
+        },
+        {
+            "matches": [
+                "https://codeforces.com/problemset/problem/*/*"
+            ],
+            "js": [
+                "/content_scripts/problemset/problem/main.js"
             ]
         }
     ]
